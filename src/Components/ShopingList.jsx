@@ -127,7 +127,6 @@ export default function ShopingList() {
                     </Td>
                     <Td className="catagoryClass">{item.category}</Td>
                     <Td>{decodeDescription(item.description)}</Td>
-                    {/* <Td>tTT</Td> */}
                     <Th className="priceClass">{formatPrice(item.price)}</Th>
                   </tr>
                 </tbody>

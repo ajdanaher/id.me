@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { ColorRing } from "react-loader-spinner";
-import { httpGet } from "./http";
 import styled from "styled-components";
 
 const Image = styled.img`
