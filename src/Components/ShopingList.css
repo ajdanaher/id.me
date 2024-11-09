@@ -1,0 +1,17 @@
+
+.catagoryClass,
+.nameClass {
+  width: 12%;
+  min-width: 10%;
+}
+
+.locationClass {
+  width: 15%;
+  min-width: 10%;
+}
+
+.priceClass,
+.purchaseDateClass {
+  width: 10%;
+  min-width: 10%;
+}
