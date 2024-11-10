@@ -10,15 +10,58 @@ import he from "he";
 const apiPath =
   "https://storage.googleapis.com/marketplace-prod-7728-shop-cdn-e5e2/interview/data.json";
 
+
+
 const StyledContainer = styled.div`
   margin: 5%;
   padding: 3%;
-  width: 80%;
-  background-color: lightgrey;
+  width: 95%;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
+  gap: 1rem;
+`;
+
+const Card = styled.div`
+  background-color: white;
+  width: 90%;
+  height: auto;
+  box-shadow: 1px 2.1px 2.1px hsl(0deg 0% 0% / 0.47);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 5px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: none;
+  justify-content: space-between;
+`;
+
+const ItemName = styled.div`
+  width: auto;
+  text-align: left;
+  margin-left: 1rem;
+`;
+
+const ItemPrice = styled.div`
+  max-width: auto;
+  margin: 0;
+`;
+
+const Description = styled.div`
+  text-align: start;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 0;
 `;
 
 const Table = styled.table`
@@ -101,7 +144,26 @@ export default function ShopingList() {
       {error === null && (
         <StyledContainer>
           <Caption>Purchase List for the Account</Caption>
-          <Table>
+          {shopingList.map((item) => {
+            return (
+              <Card>
+                <Header>
+                  <Img src={item.location} alt="MerchantImage" />
+                  <ItemName>{item.name}</ItemName>
+                  <ItemPrice>{formatPrice(item.price)}</ItemPrice>
+                </Header>
+                <Description>{decodeDescription(item.description)}</Description>
+                <Footer>
+                  <p className="purchaseDateTitle">Purchase Date</p>
+                  <p className="purchaseDate">
+                    {moment(item.purchaseDate).format("ll")}
+                  </p>
+                </Footer>
+              </Card>
+            );
+          })}
+
+          {/* <Table>
             <Thead>
               <tr>
                 <Th className="nameClass">Name</Th>
@@ -112,8 +174,8 @@ export default function ShopingList() {
                 <Th className="priceClass">Price</Th>
               </tr>
             </Thead>
-          </Table>
-          {shopingList.map((item) => {
+          </Table> */}
+          {/* {shopingList.map((item) => {
             return (
               <div>
                 <tbody>
@@ -132,7 +194,7 @@ export default function ShopingList() {
                 </tbody>
               </div>
             );
-          })}
+          })} */}
         </StyledContainer>
       )}
     </div>

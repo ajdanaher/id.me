@@ -1,4 +1,3 @@
-
 .catagoryClass,
 .nameClass {
   width: 12%;
@@ -14,4 +13,19 @@
 .purchaseDateClass {
   width: 10%;
   min-width: 10%;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.purchaseDateTitle {
+  margin: 1rem 0 0 0;
+  text-align: start;
+  font-weight: bold;
+}
+
+.purchaseDate {
+  margin: 0 0 1rem 0;
+  text-align: start;
 }
