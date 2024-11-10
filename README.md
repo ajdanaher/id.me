@@ -4,6 +4,8 @@ Please do following  to test the app -
 - move into the cloned directory.
 - npm install
 - npm start.
+- visit http://localhost:3000
+- try to adjust browser window to see lower form factor.
 
 Please note following -
 
