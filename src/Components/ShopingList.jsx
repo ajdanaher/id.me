@@ -13,7 +13,15 @@ const apiPath =
 const StyledContainer = styled.div`
   margin: 5%;
   padding: 3%;
-  width: 95%;
+
+  //For Desktop
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+  //For Mobile
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const MobileContainer = styled.div`
@@ -29,6 +37,10 @@ const MobileContainer = styled.div`
 `;
 
 const DesktopContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
   @media (max-width: 768px) {
     display: none;
   }
@@ -78,6 +90,7 @@ const Footer = styled.div`
 const Table = styled.table`
   border-collapse: collapse;
   border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
 `;
@@ -90,10 +103,6 @@ const Caption = styled.caption`
 
 const Thead = styled.thead`
   background-color: rgb(228 240 245);
-`;
-
-const Tbody = styled.tr`
-  /* display: flex; */
 `;
 
 const Th = styled.th`
@@ -181,6 +190,7 @@ export default function ShopingList() {
             })}
           </MobileContainer>
           <DesktopContainer>
+            <Caption>Purchase List for the Account</Caption>
             <Table>
               <Thead>
                 <tr>
@@ -196,7 +206,7 @@ export default function ShopingList() {
             {shopingList.map((item) => {
               return (
                 <div>
-                  <Tbody>
+                  <tbody>
                     <tr>
                       <Th className="nameClass">{item.name}</Th>
                       <Td className="locationClass">
@@ -209,7 +219,7 @@ export default function ShopingList() {
                       <Td>{decodeDescription(item.description)}</Td>
                       <Th className="priceClass">{formatPrice(item.price)}</Th>
                     </tr>
-                  </Tbody>
+                  </tbody>
                 </div>
               );
             })}
