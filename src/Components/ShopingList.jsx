@@ -97,8 +97,9 @@ const Table = styled.table`
 
 const Caption = styled.caption`
   caption-side: bottom;
-  padding: 10px;
+  margin-bottom: 2rem;
   font-weight: bold;
+  font-size: larger;
 `;
 
 const Thead = styled.thead`
